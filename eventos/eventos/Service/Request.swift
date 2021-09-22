@@ -61,9 +61,6 @@ class Request{
                                 for event in eventJson{
                                     
                                     // Alterar date: Date() por conversão do timestamp
-                                    
-                                    guard let id = event["id"] else {return}
-                                    
                                     let eventObject = Event(id: Int(event["id"] as? String ?? "")!,
                                                             longitude: event["longitude"] as? Float ?? 0,
                                                             latitude: event["latitude"] as? Float ?? 0,

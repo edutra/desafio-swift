@@ -9,29 +9,49 @@ import UIKit
 
 class ViewController: UIViewController {
 
-//    @IBOutlet weak var tableView: UITableView!
+   
+    @IBOutlet weak var tableView: UITableView!
+    private let viewModel = ViewControllerViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        self.viewModel.delegate = self
         
-        let request = Request()
-        request.eventsRequest { events in
-            print(events)
-        }
-        request.eventRequest(by: 1) { event in
-            print(event)
-        }
+        tableView.delegate = self
+        tableView.dataSource = self
+        
     }
 
 
 }
 
-//extension ViewController: UITableViewDelegate, UITableViewDataSource
-//func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//    <#code#>
-//}
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 100
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
 
+}
+
+extension ViewController: ViewControllerViewModelDelegate{
+    func startRequest() {
+        print("Start request")
+    }
+    
+    func endRequest() {
+        print("End request")
+    }
+    
+    func stopRequest() {
+        print("Stop request")
+    }
+    
+    
+}
 

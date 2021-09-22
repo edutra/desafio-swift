@@ -19,6 +19,8 @@
 		E7AF5A4526FAF5B100E86CEE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF5A4426FAF5B100E86CEE /* Request.swift */; };
 		E7AF5A4726FAF66600E86CEE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF5A4626FAF66600E86CEE /* Event.swift */; };
 		E7AF5A4926FAF6D700E86CEE /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF5A4826FAF6D700E86CEE /* People.swift */; };
+		E7AF5A4B26FB159F00E86CEE /* ViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF5A4A26FB159F00E86CEE /* ViewControllerViewModel.swift */; };
+		E7AF5A4D26FB175B00E86CEE /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF5A4C26FB175B00E86CEE /* EventTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		E7AF5A4426FAF5B100E86CEE /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		E7AF5A4626FAF66600E86CEE /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		E7AF5A4826FAF6D700E86CEE /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		E7AF5A4A26FB159F00E86CEE /* ViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerViewModel.swift; sourceTree = "<group>"; };
+		E7AF5A4C26FB175B00E86CEE /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				E7AF5A1026FAE7E300E86CEE /* ViewController.swift */,
+				E7AF5A4C26FB175B00E86CEE /* EventTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 		E7AF5A4126FAE86C00E86CEE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E7AF5A4A26FB159F00E86CEE /* ViewControllerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -310,9 +316,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7AF5A4D26FB175B00E86CEE /* EventTableViewCell.swift in Sources */,
 				E7AF5A1726FAE7E300E86CEE /* eventos.xcdatamodeld in Sources */,
 				E7AF5A1126FAE7E300E86CEE /* ViewController.swift in Sources */,
 				E7AF5A4526FAF5B100E86CEE /* Request.swift in Sources */,
+				E7AF5A4B26FB159F00E86CEE /* ViewControllerViewModel.swift in Sources */,
 				E7AF5A0D26FAE7E300E86CEE /* AppDelegate.swift in Sources */,
 				E7AF5A4726FAF66600E86CEE /* Event.swift in Sources */,
 				E7AF5A0F26FAE7E300E86CEE /* SceneDelegate.swift in Sources */,
