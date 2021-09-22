@@ -17,10 +17,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.viewModel.delegate = self
+        viewModel.delegate = self
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(EventTableViewCell.self, forCellReuseIdentifier: "eventCell")
+        viewModel.startLoading()
         
     }
 
@@ -34,7 +36,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! EventTableViewCell
+        
+        cell.event = self.viewModel.events?[indexPath.row]
+        return cell
     }
 
 }
