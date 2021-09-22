@@ -17,6 +17,8 @@
 		E7AF5A2726FAE7E600E86CEE /* eventosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF5A2626FAE7E600E86CEE /* eventosTests.swift */; };
 		E7AF5A3226FAE7E600E86CEE /* eventosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF5A3126FAE7E600E86CEE /* eventosUITests.swift */; };
 		E7AF5A4526FAF5B100E86CEE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF5A4426FAF5B100E86CEE /* Request.swift */; };
+		E7AF5A4726FAF66600E86CEE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF5A4626FAF66600E86CEE /* Event.swift */; };
+		E7AF5A4926FAF6D700E86CEE /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF5A4826FAF6D700E86CEE /* People.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		E7AF5A3126FAE7E600E86CEE /* eventosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventosUITests.swift; sourceTree = "<group>"; };
 		E7AF5A3326FAE7E600E86CEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7AF5A4426FAF5B100E86CEE /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		E7AF5A4626FAF66600E86CEE /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		E7AF5A4826FAF6D700E86CEE /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,8 @@
 		E7AF5A3F26FAE86000E86CEE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E7AF5A4626FAF66600E86CEE /* Event.swift */,
+				E7AF5A4826FAF6D700E86CEE /* People.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,7 +314,9 @@
 				E7AF5A1126FAE7E300E86CEE /* ViewController.swift in Sources */,
 				E7AF5A4526FAF5B100E86CEE /* Request.swift in Sources */,
 				E7AF5A0D26FAE7E300E86CEE /* AppDelegate.swift in Sources */,
+				E7AF5A4726FAF66600E86CEE /* Event.swift in Sources */,
 				E7AF5A0F26FAE7E300E86CEE /* SceneDelegate.swift in Sources */,
+				E7AF5A4926FAF6D700E86CEE /* People.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
