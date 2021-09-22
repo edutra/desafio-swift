@@ -23,7 +23,14 @@ class Request{
                             
                             if let event = jsonResult as? [String : Any] {
                                 
-                                let eventObject = Event(id: event["id"] as! Int, longitude: event["longitude"] as! Float, latitude: event["latitude"] as! Float, price: event["price"] as! Float, image: event["image"] as! String, title: event["title"] as! String, description: event["description"] as! String, date: Date(), people: [])
+                                let eventObject = Event(id: Int(event["id"] as? String ?? "")!,
+                                                        longitude: event["longitude"] as? Float ?? 0,
+                                                        latitude: event["latitude"] as? Float ?? 0,
+                                                        price: event["price"] as? Float ?? -1.0,
+                                                        image: event["image"] as? String ?? "",
+                                                        title: event["title"] as? String ?? "",
+                                                        description: event["description"] as? String ?? "",
+                                                        date: Date(), people: [])
                                 completion(eventObject)
                                 
                                 
@@ -54,7 +61,17 @@ class Request{
                                 for event in eventJson{
                                     
                                     // Alterar date: Date() por conversão do timestamp
-                                    let eventObject = Event(id: event["id"] as! Int, longitude: event["longitude"] as! Float, latitude: event["latitude"] as! Float, price: event["price"] as! Float, image: event["image"] as! String, title: event["title"] as! String, description: event["description"] as! String, date: Date(), people: [])
+                                    
+                                    guard let id = event["id"] else {return}
+                                    
+                                    let eventObject = Event(id: Int(event["id"] as? String ?? "")!,
+                                                            longitude: event["longitude"] as? Float ?? 0,
+                                                            latitude: event["latitude"] as? Float ?? 0,
+                                                            price: event["price"] as? Float ?? -1.0,
+                                                            image: event["image"] as? String ?? "",
+                                                            title: event["title"] as? String ?? "",
+                                                            description: event["description"] as? String ?? "",
+                                                            date: Date(), people: [])
                                     
                                     events.append(eventObject)
                                 }
