@@ -112,7 +112,6 @@
 				E7AF5A4126FAE86C00E86CEE /* ViewModel */,
 				E7AF5A4026FAE86600E86CEE /* View */,
 				E7AF5A3F26FAE86000E86CEE /* Model */,
-				E7AF5A1026FAE7E300E86CEE /* ViewController.swift */,
 				E7AF5A1826FAE7E500E86CEE /* Assets.xcassets */,
 				E7AF5A1226FAE7E300E86CEE /* Main.storyboard */,
 				E7AF5A1D26FAE7E500E86CEE /* Info.plist */,
@@ -152,6 +151,7 @@
 		E7AF5A4026FAE86600E86CEE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E7AF5A1026FAE7E300E86CEE /* ViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
