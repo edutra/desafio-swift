@@ -11,6 +11,10 @@ class Request{
     
     let url: URL? = URL(string: "http://5f5a8f24d44d640016169133.mockapi.io/api/events") ?? nil
     
+    func eventRequest(by id: Int, completion: @escaping (Event) -> ()){
+        
+    }
+    
     func eventsRequest(completion: @escaping ([Event]) -> ()){
         
         if let url = self.url{
