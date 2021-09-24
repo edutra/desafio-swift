@@ -10,9 +10,10 @@ import Foundation
 protocol ViewControllerViewModelDelegate{
     func startRequest()
     func endRequest()
-    func stopRequest()
     
-
+}
+extension ViewControllerViewModelDelegate{
+    func stopRequest(){}
 }
 
 class ViewControllerViewModel{

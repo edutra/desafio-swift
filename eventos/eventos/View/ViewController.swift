@@ -58,10 +58,5 @@ extension ViewController: ViewControllerViewModelDelegate{
         }
     }
     
-    func stopRequest() {
-        print("Stop request")
-    }
-    
-    
 }
 

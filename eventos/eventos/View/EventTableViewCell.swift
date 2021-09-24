@@ -25,12 +25,13 @@ class EventTableViewCell: UITableViewCell{
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         let stackView = UIStackView(arrangedSubviews: [eventNameLabel, eventPriceLabel])
-        stackView.axis = .horizontal
+        stackView.axis = .vertical
         eventNameLabel.translatesAutoresizingMaskIntoConstraints = false
         eventPriceLabel.translatesAutoresizingMaskIntoConstraints = false
         
         
         addSubview(stackView)
+        
         stackView.anchor(top: self.contentView.topAnchor, leading: self.contentView.leadingAnchor, bottom: self.contentView.bottomAnchor, trailing: self.contentView.trailingAnchor)
         
     }

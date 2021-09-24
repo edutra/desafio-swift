@@ -9,7 +9,8 @@ import Foundation
 
 struct Event {
     var id: Int
-    var longitude, latitude, price: Float
+    var longitude, latitude: Float
+    var price: Double
     var image: String
     var title: String
     var description: String
