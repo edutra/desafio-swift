@@ -35,6 +35,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! EventTableViewCell
@@ -42,6 +45,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         
         cell.event = self.viewModel.events?[indexPath.row]
+        
+        
         return cell
     }
 
