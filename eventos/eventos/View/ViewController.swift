@@ -38,6 +38,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! EventTableViewCell
         
+        
+        
         cell.event = self.viewModel.events?[indexPath.row]
         return cell
     }

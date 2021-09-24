@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E79B19E126FDA1CD004B0D9B /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B19E026FDA1CD004B0D9B /* UIView+Layout.swift */; };
 		E7AF5A0D26FAE7E300E86CEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF5A0C26FAE7E300E86CEE /* AppDelegate.swift */; };
 		E7AF5A0F26FAE7E300E86CEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF5A0E26FAE7E300E86CEE /* SceneDelegate.swift */; };
 		E7AF5A1126FAE7E300E86CEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF5A1026FAE7E300E86CEE /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E79B19E026FDA1CD004B0D9B /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		E7AF5A0926FAE7E300E86CEE /* eventos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eventos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7AF5A0C26FAE7E300E86CEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7AF5A0E26FAE7E300E86CEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E79B19DF26FDA191004B0D9B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E79B19E026FDA1CD004B0D9B /* UIView+Layout.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		E7AF5A0026FAE7E300E86CEE = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 		E7AF5A0B26FAE7E300E86CEE /* eventos */ = {
 			isa = PBXGroup;
 			children = (
+				E79B19DF26FDA191004B0D9B /* Utils */,
 				E7AF5A4326FAF5A500E86CEE /* Service */,
 				E7AF5A4226FAF54100E86CEE /* App */,
 				E7AF5A4126FAE86C00E86CEE /* ViewModel */,
@@ -320,6 +331,7 @@
 				E7AF5A1726FAE7E300E86CEE /* eventos.xcdatamodeld in Sources */,
 				E7AF5A1126FAE7E300E86CEE /* ViewController.swift in Sources */,
 				E7AF5A4526FAF5B100E86CEE /* Request.swift in Sources */,
+				E79B19E126FDA1CD004B0D9B /* UIView+Layout.swift in Sources */,
 				E7AF5A4B26FB159F00E86CEE /* ViewControllerViewModel.swift in Sources */,
 				E7AF5A0D26FAE7E300E86CEE /* AppDelegate.swift in Sources */,
 				E7AF5A4726FAF66600E86CEE /* Event.swift in Sources */,

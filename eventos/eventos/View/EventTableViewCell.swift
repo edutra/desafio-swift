@@ -9,27 +9,32 @@ import Foundation
 import UIKit
 
 class EventTableViewCell: UITableViewCell{
-    let eventName = UILabel()
+    let eventNameLabel = UILabel()
+    let eventPriceLabel = UILabel()
+    
     
     var event: Event?{
         didSet{
-            eventName.text = event?.title
-            
+            eventNameLabel.text = event?.title
+            eventPriceLabel.text = event?.price.description
         }
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-            super.init(style: style, reuseIdentifier: reuseIdentifier)
-            eventName.translatesAutoresizingMaskIntoConstraints = false
-
-            contentView.addSubview(eventName)
-            
-
-        }
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        required init?(coder aDecoder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-         }
+        let stackView = UIStackView(arrangedSubviews: [eventNameLabel, eventPriceLabel])
+        stackView.axis = .horizontal
+        eventNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        eventPriceLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(eventNameLabel)
+        
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
 }
