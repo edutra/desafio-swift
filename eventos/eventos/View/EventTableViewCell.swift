@@ -11,7 +11,7 @@ import UIKit
 class EventTableViewCell: UITableViewCell{
     let eventNameLabel = UILabel()
     let eventPriceLabel = UILabel()
-    let eventImage = UIImageView()
+    var eventImage = UIImageView()
     
     var event: Event?{
         didSet{
@@ -19,8 +19,19 @@ class EventTableViewCell: UITableViewCell{
             eventNameLabel.font = UIFont(name: "system", size: 32)
             eventPriceLabel.text = event?.price.description
             
-            guard let eventImageUrl = event?.image else {return}
-            eventImage.downloaded(from: eventImageUrl, contentMode: .scaleAspectFit)
+            
+            guard let url = URL(string: event!.image) else {return}
+
+            DispatchQueue.global().async {
+                guard let data = try? Data(contentsOf: url) else { return }
+                DispatchQueue.main.async {
+                    let image = self.resizeImage(image: UIImage(data: data)!, targetSize: CGSize(width: 100.0, height: 100.0))
+                    
+                    self.eventImage.image = image
+                }
+                
+            }
+            
             
             
             
@@ -31,27 +42,57 @@ class EventTableViewCell: UITableViewCell{
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         let labelsStackView = UIStackView(arrangedSubviews: [eventNameLabel, eventPriceLabel])
-        let stackView = UIStackView(arrangedSubviews: [eventImage, labelsStackView])
+//        let stackView = UIStackView(arrangedSubviews: [eventImage, labelsStackView])
         labelsStackView.axis = .vertical
-        stackView.axis = .horizontal
+//        stackView.axis = .horizontal
         eventNameLabel.translatesAutoresizingMaskIntoConstraints = false
         eventPriceLabel.translatesAutoresizingMaskIntoConstraints = false
         
         
         
         
-        addSubview(stackView)
+        addSubview(labelsStackView)
+        addSubview(eventImage)
+        
+        eventImage.anchor(top: contentView.topAnchor, leading: contentView.leadingAnchor, bottom: contentView.bottomAnchor, trailing: labelsStackView.leadingAnchor)
         
         
-        stackView.anchor(top: self.contentView.topAnchor, leading: self.contentView.leadingAnchor, bottom: self.contentView.bottomAnchor, trailing: self.contentView.trailingAnchor)
+        labelsStackView.anchor(top: contentView.topAnchor, leading: eventImage.trailingAnchor, bottom: contentView.bottomAnchor, trailing: contentView.trailingAnchor)
         
-       
+        
        
         
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    fileprivate func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage? {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio, height: size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(origin: .zero, size: newSize)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
     }
     
     

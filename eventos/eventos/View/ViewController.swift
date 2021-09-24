@@ -23,7 +23,8 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(EventTableViewCell.self, forCellReuseIdentifier: "eventCell")
         viewModel.startLoading()
-        
+        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        tableView.rowHeight = UITableView.automaticDimension
     }
 
 
@@ -37,7 +38,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+        
     }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+            cell.layoutIfNeeded()
+        }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! EventTableViewCell
