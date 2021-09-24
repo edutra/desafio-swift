@@ -16,6 +16,7 @@ class EventTableViewCell: UITableViewCell{
     var event: Event?{
         didSet{
             eventNameLabel.text = event?.title
+            eventNameLabel.font = UIFont(name: "system", size: 32)
             eventPriceLabel.text = event?.price.description
         }
     }
@@ -27,8 +28,10 @@ class EventTableViewCell: UITableViewCell{
         stackView.axis = .horizontal
         eventNameLabel.translatesAutoresizingMaskIntoConstraints = false
         eventPriceLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(eventNameLabel)
         
+        
+        addSubview(stackView)
+        stackView.anchor(top: self.contentView.topAnchor, leading: self.contentView.leadingAnchor, bottom: self.contentView.bottomAnchor, trailing: self.contentView.trailingAnchor)
         
     }
     

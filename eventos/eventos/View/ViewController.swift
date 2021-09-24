@@ -31,7 +31,8 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        guard let count = viewModel.events?.count else { return 0}
+        return count
     }
     
     
@@ -52,7 +53,9 @@ extension ViewController: ViewControllerViewModelDelegate{
     }
     
     func endRequest() {
-        print("End request")
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func stopRequest() {
